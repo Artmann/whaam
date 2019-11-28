@@ -11,7 +11,7 @@
     "build": "tsc",
     "lint": "eslint **/*.ts",
     "posttest": "eslint . --ext .ts --config .eslintrc",
-    "prepack": "rimraf lib && tsc -b",
+    "prepack": "rimraf lib && tsc",
     "test": "jest"
   },
   "bin": {
@@ -37,22 +37,16 @@
     "@oclif/command": "^1",
     "@oclif/config": "^1",
     "@oclif/plugin-help": "^2",
-    "cli-ux": "^5.3.3",
-    "lex": "^1.7.9",
-    "tslib": "^1"
+    "cli-ux": "^5.3.3"
   },
   "devDependencies": {
     "@oclif/test": "^1",
-    "@types/chai": "^4",
     "@types/jest": "^24.0.23",
-    "@types/mocha": "^5",
     "@types/node": "^10",
     "@typescript-eslint/eslint-plugin": "^2.9.0",
     "@typescript-eslint/parser": "^2.9.0",
-    "chai": "^4",
     "eslint": "^6.7.1",
     "jest": "^24.9.0",
-    "nyc": "^14",
     "rimraf": "^3.0.0",
     "ts-jest": "^24.2.0",
     "ts-node": "^8",
