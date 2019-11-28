@@ -8,6 +8,8 @@
   "homepage": "https://github.com/Artmann/whaam",
   "main": "lib/index.js",
   "scripts": {
+    "build": "tsc",
+    "lint": "eslint **/*.ts",
     "posttest": "eslint . --ext .ts --config .eslintrc",
     "prepack": "rimraf lib && tsc -b",
     "test": "jest"
@@ -45,10 +47,10 @@
     "@types/jest": "^24.0.23",
     "@types/mocha": "^5",
     "@types/node": "^10",
+    "@typescript-eslint/eslint-plugin": "^2.9.0",
+    "@typescript-eslint/parser": "^2.9.0",
     "chai": "^4",
-    "eslint": "^5.13",
-    "eslint-config-oclif": "^3.1",
-    "eslint-config-oclif-typescript": "^0.1",
+    "eslint": "^6.7.1",
     "jest": "^24.9.0",
     "nyc": "^14",
     "rimraf": "^3.0.0",
