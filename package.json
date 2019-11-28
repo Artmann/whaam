@@ -1,7 +1,7 @@
 {
   "name": "whaam",
   "description": "CLI Testing made eazy",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Christoffer Artmann @Artmann",
   "license": "MIT",
   "repository": "Artmann/whaam",
