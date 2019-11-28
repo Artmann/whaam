@@ -1,0 +1,31 @@
+on: [ push ]
+name: Verify Pull Request
+jobs:
+  verify-pull-requrst:
+    name: Verify Node ${{ matrix.node }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        node: [ 12.13.x, 13.2.x ]
+        os: [ ubuntu-latest, macOS-latest, windows-latest ]
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Node ${{ matrix.node }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+          registry-url: https://registry.npmjs.org
+
+      - name: Dependecies
+        run: yarn
+
+      - name: Consistent Code Style
+        run: yarn lint
+
+      - name: Test Suite
+        run: yarn test
+
+      - name: Build
+        run: yarn build
