@@ -34,8 +34,6 @@ function extract(input: string): Statement[] {
 export default function parse(input: string): Test {
   const statements = extract(input);
 
-  console.log(statements);
-
   const command = statements.find(statement => statement.expression === 'CMD');
 
   if (!command) {

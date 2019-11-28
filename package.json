@@ -10,7 +10,7 @@
   "scripts": {
     "posttest": "eslint . --ext .ts --config .eslintrc",
     "prepack": "rimraf lib && tsc -b",
-    "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\""
+    "test": "jest"
   },
   "bin": {
     "whaam": "./bin/run"
@@ -42,16 +42,18 @@
   "devDependencies": {
     "@oclif/test": "^1",
     "@types/chai": "^4",
+    "@types/jest": "^24.0.23",
     "@types/mocha": "^5",
     "@types/node": "^10",
     "chai": "^4",
     "eslint": "^5.13",
     "eslint-config-oclif": "^3.1",
     "eslint-config-oclif-typescript": "^0.1",
-    "mocha": "^5",
+    "jest": "^24.9.0",
     "nyc": "^14",
     "rimraf": "^3.0.0",
+    "ts-jest": "^24.2.0",
     "ts-node": "^8",
-    "typescript": "^3.3"
+    "typescript": "^3.7.2"
   }
 }
