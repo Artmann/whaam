@@ -1,0 +1,57 @@
+{
+  "name": "whaam",
+  "description": "CLI Testing made eazy",
+  "version": "0.0.1",
+  "author": "Christoffer Artmann @Artmann",
+  "license": "MIT",
+  "repository": "Artmann/whaam",
+  "homepage": "https://github.com/Artmann/whaam",
+  "main": "lib/index.js",
+  "scripts": {
+    "posttest": "eslint . --ext .ts --config .eslintrc",
+    "prepack": "rimraf lib && tsc -b",
+    "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\""
+  },
+  "bin": {
+    "whaam": "./bin/run"
+  },
+  "engines": {
+    "node": ">=12.13.0"
+  },
+  "files": [
+    "/bin",
+    "/lib"
+  ],
+  "keywords": [
+    "oclif",
+    "cli",
+    "testing"
+  ],
+  "oclif": {
+    "bin": "whaam"
+  },
+  "types": "lib/index.d.ts",
+  "dependencies": {
+    "@oclif/command": "^1",
+    "@oclif/config": "^1",
+    "@oclif/plugin-help": "^2",
+    "cli-ux": "^5.3.3",
+    "lex": "^1.7.9",
+    "tslib": "^1"
+  },
+  "devDependencies": {
+    "@oclif/test": "^1",
+    "@types/chai": "^4",
+    "@types/mocha": "^5",
+    "@types/node": "^10",
+    "chai": "^4",
+    "eslint": "^5.13",
+    "eslint-config-oclif": "^3.1",
+    "eslint-config-oclif-typescript": "^0.1",
+    "mocha": "^5",
+    "nyc": "^14",
+    "rimraf": "^3.0.0",
+    "ts-node": "^8",
+    "typescript": "^3.3"
+  }
+}

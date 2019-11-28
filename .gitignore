@@ -1,0 +1,9 @@
+.nyc_output
+dist
+lib
+node_modules
+tmp
+*-debug.log
+
+*-error.log
+
