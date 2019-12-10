@@ -10,9 +10,9 @@
   "scripts": {
     "build": "tsc",
     "lint": "eslint **/*.ts",
-    "posttest": "eslint . --ext .ts --config .eslintrc",
     "prepack": "rimraf lib && tsc",
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watchAll"
   },
   "bin": {
     "whaam": "./bin/run"
@@ -42,6 +42,7 @@
   "devDependencies": {
     "@oclif/test": "^1",
     "@types/jest": "^24.0.23",
+    "@types/mocha": "^5.2.7",
     "@types/node": "^10",
     "@typescript-eslint/eslint-plugin": "^2.9.0",
     "@typescript-eslint/parser": "^2.9.0",

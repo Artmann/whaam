@@ -1,24 +1,36 @@
-import parse from '.';
+import parse from './index';
 
 describe('parser', () => {
   it('parses a test suite', () => {
     const input = `
-      CMD echo "Hello World" > message.txt
+ARRANGE
+  mkdir -p
+    messages
+    secrets
 
-      ASSERT
-        FILE message.txt
-        CONTENT message.txt
-          Hello World
+ACT
+  echo "Hello World" > messages/greeting.txt
 
-    `;
+ASSERT
+  FILE messages/greeting.txt
+  CONTENT messages/greeting.txt
+    Hello
+    World
+
+`;
 
     const test = parse(input);
 
     expect(test).toEqual({
-      command: 'echo "Hello World" > message.txt',
+      arrangements: [
+        'mkdir -p messages secrets'
+      ],
+      actions: [
+        'echo "Hello World" > messages/greeting.txt'
+      ],
       assertions: [
-        { name: 'FILE', args: ['message.txt'] },
-        { name: 'CONTENT', args: ['message.txt', 'Hello', 'World'] }
+        { name: 'FILE', params: ['messages/greeting.txt'] },
+        { name: 'CONTENT', params: ['messages/greeting.txt', 'Hello', 'World'] }
       ]
     });
   });
