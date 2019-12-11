@@ -1,0 +1,10 @@
+ARRANGE
+  mkdir -p messages
+
+ACT
+  echo "Hello World" > messages/greeting.txt
+
+ASSERT
+  FILE messages/greeting.txt
+  CONTENT messages/greeting.txt
+    Hello World
